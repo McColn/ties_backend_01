@@ -1,0 +1,135 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+    <h1>Edit Item</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">title</label>
+        <input type="text" class="form-control" name="title" value="{{s.title}}">
+    </div>
+
+    <!-- <div class="col-md-6 mt-3">
+        <label for="" class="form-label">slug</label>
+        <input type="text" class="form-control" name="slug">
+    </div> -->
+
+    <div class="form-group">
+        <label for="id_category">Category</label>
+        <select class="form-control" id="id_category" name="category">
+            <option value="">-- Select Category --</option>
+            {% for category in category %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">price</label>
+        <input type="text" class="form-control" name="price" value="{{s.price}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">discount_price</label>
+        <input type="text" class="form-control" name="discount_price" value="{{s.discount_price}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">description</label>
+        <input type="text" id="description" class="form-control" name="description" value="{{s.description}}">
+    </div>
+
+    
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">location</label>
+        <input type="text" class="form-control" name="location" value="{{s.location}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">quality</label>
+        <input type="text" class="form-control" name="quality" value="{{s.quality}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">sellOrRent</label>
+        <input type="text" class="form-control" name="sellOrRent" value="{{s.sellOrRent}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">quantity</label>
+        <input type="text" class="form-control" name="quantity" value="{{s.quantity}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="image" class="form-label">Image: (recomended size: 1500 x 1000 px)</label>
+        <input type="file" class="form-control" name="image" value="{{s.image}}">
+      </div><br>
+
+      <!-- ============ Items =============== -->
+    <h5>For Items Especially Engines</h5>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">manufacturer</label>
+        <input type="text" class="form-control" name="manufacturer" value="{{s.manufacturer}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">technicalDetails</label>
+        <input type="text" class="form-control" name="technicalDetails" value="{{s.technicalDetails}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">dimension</label>
+        <input type="text" class="form-control" name="dimension" value="{{s.dimension}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">weight</label>
+        <input type="text" class="form-control" name="weight" value="{{s.weight}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">capacity</label>
+        <input type="text" class="form-control" name="capacity" value="{{s.capacity}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">horsepower</label>
+        <input type="text" class="form-control" name="horsepower" value="{{s.horsepower}}">
+    </div>
+
+      <!-- ============ Minerals =============== -->
+      <h5>For Minerals Especially</h5>
+
+      <div class="col-md-6 mt-3">
+          <label for="" class="form-label">grade</label>
+          <input type="text" class="form-control" name="grade" value="{{s.grade}}">
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <label for="" class="form-label">groundedArea</label>
+        <input type="text" class="form-control" name="groundedArea" value="{{s.groundedArea}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">physicalProperties</label>
+        <input type="text" class="form-control" name="physicalProperties" value="{{s.physicalProperties}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">qualityAssurance</label>
+        <input type="file" class="form-control" name="qualityAssurance" value="{{s.qualityAssurance}}">
+    </div>
+
+    <button class="btn btn-warning mb-5">Update now</button>
+</form>
+
+</div>
+</div>
+
+{% endblock %}
+
+

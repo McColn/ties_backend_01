@@ -1,0 +1,75 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+    <h3>Investment Edit Item</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">projectName</label>
+        <input type="text" class="form-control" name="projectName" value="{{s.projectName}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">owner</label>
+        <input type="text" class="form-control" name="owner" value="{{s.owner}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">operatingCompany</label>
+        <input type="text" class="form-control" name="operatingCompany" value="{{s.operatingCompany}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">resources</label>
+        <input type="text" class="form-control" name="resources" value="{{s.resources}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">resourcesSummary</label>
+        <input type="text" class="form-control" name="resourcesSummary" value="{{s.resourcesSummary}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">areaCovered</label>
+        <input type="text" class="form-control" name="areaCovered" value="{{s.areaCovered}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">licenceType</label>
+        <input type="text" class="form-control" name="licenceType" value="{{s.licenceType}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">licenceNumber</label>
+        <input type="text" class="form-control" name="licenceNumber" value="{{s.licenceNumber}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">physicalLocation</label>
+        <input type="text" class="form-control" name="physicalLocation" value="{{s.physicalLocation}}">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">mapLocation</label>
+        <input type="text" class="form-control" name="mapLocation" value="{{s.mapLocation}}">
+    </div>
+
+    <div class="input-group mb-3 mt-5">
+        <input type="file" class="form-control" name="image" value="{{s.image.url}}">
+      </div>
+
+    
+    <!-- <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div> -->
+
+    <button class="btn btn-warning mb-5" type="submit">Update</button>
+</form>
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+    <h1>Edit Item</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+    <div class="col-md-12 mt-3">
+        <label for="" class="form-label">title</label>
+        <input type="text" class="form-control" name="title" value={{s.title}}>
+    </div>
+
+    <div class="col-md-12 mt-3">
+        <label for="" class="form-label">description</label>
+        <input type="text" class="form-control" name="description" value="{{s.description}}">
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="id_category">Mine Name</label>
+        <select class="form-control" id="id_category" name="mine_name">
+            <option value="">-- Select Category --</option>
+            {% for category in category %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="input-group mb-3 mt-5">
+        <input type="file" class="form-control" name="image" value="{{s.image}}">
+    </div>
+
+    <button class="btn btn-warning mb-5" type="submit">Update</button>
+</form>
+
+</div>
+</div>
+
+{% endblock %}

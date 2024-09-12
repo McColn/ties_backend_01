@@ -1,0 +1,99 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+    <h1>Add Investment.</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">projectName</label>
+        <input type="text" class="form-control" name="projectName">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">owner</label>
+        <input type="text" class="form-control" name="owner">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">operatingCompany</label>
+        <input type="text" class="form-control" name="operatingCompany">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">Mineral</label>
+        <input type="text" class="form-control" name="resources">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">resourcesSummary</label>
+        <input type="text" class="form-control" name="resourcesSummary">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">areaCovered</label>
+        <input type="text" class="form-control" name="areaCovered">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">licenceType</label>
+        <input type="text" class="form-control" name="licenceType">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">licenceNumber</label>
+        <input type="text" class="form-control" name="licenceNumber" >
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">physicalLocation</label>
+        <input type="text" class="form-control" name="physicalLocation" >
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="id_category">Mode of Investment</label>
+        <select class="form-control" id="id_category" name="modeOfInvestment">
+            <option value="">-- Select Category --</option>
+            <option value="Joint Venture">Joint Venture</option>
+            <option value="Financing">Financing</option>
+        </select>
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="id_category">Project Status</label>
+        <select class="form-control" id="id_category" name="projectStatus">
+            <option value="">-- Select Category --</option>
+            <option value="Feasibility Study">Feasibility Study</option>
+            <option value="Geological Study">Geological Study</option>
+        </select>
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">mapLocation</label>
+        <input type="text" class="form-control" name="mapLocation" >
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">Image</label>
+        <input type="file" class="form-control" name="image">
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <label for="" class="form-label">Attachment</label>
+        <input type="file" class="form-control" name="attachments">
+      </div>
+
+    
+    <!-- <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div> -->
+
+    <button class="btn btn-warning mb-5 mt-5" type="submit">Add now</button>
+</form>
+
+</div>
+</div>
+
+{% endblock %}

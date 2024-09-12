@@ -1,0 +1,135 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+    <h1>Add Item</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">title</label>
+        <input type="text" class="form-control" name="title">
+    </div>
+
+    <!-- <div class="col-md-6 mt-3">
+        <label for="" class="form-label">slug</label>
+        <input type="text" class="form-control" name="slug">
+    </div> -->
+
+    <div class="form-group">
+        <label for="id_category">Category</label>
+        <select class="form-control" id="id_category" name="category">
+            <option value="">-- Select Category --</option>
+            {% for category in category %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">price</label>
+        <input type="text" class="form-control" name="price">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">discount_price</label>
+        <input type="text" class="form-control" name="discount_price">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">description</label>
+        <input type="text" id="description" class="form-control" name="description">
+    </div>
+
+    
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">location</label>
+        <input type="text" class="form-control" name="location">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">quality</label>
+        <input type="text" class="form-control" name="quality">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">sellOrRent</label>
+        <input type="text" class="form-control" name="sellOrRent">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">quantity</label>
+        <input type="text" class="form-control" name="quantity">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="image" class="form-label">Image: (recomended size: 1500 x 1000 px)</label>
+        <input type="file" class="form-control" name="image">
+      </div><br>
+
+      <!-- ============ Items =============== -->
+    <h5>For Items Especially Engines</h5>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">manufacturer</label>
+        <input type="text" class="form-control" name="manufacturer">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">technicalDetails</label>
+        <input type="text" class="form-control" name="technicalDetails">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">dimension</label>
+        <input type="text" class="form-control" name="dimension">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">weight</label>
+        <input type="text" class="form-control" name="weight">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">capacity</label>
+        <input type="text" class="form-control" name="capacity">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">horsepower</label>
+        <input type="text" class="form-control" name="horsepower">
+    </div>
+
+      <!-- ============ Minerals =============== -->
+      <h5>For Minerals Especially</h5>
+
+      <div class="col-md-6 mt-3">
+          <label for="" class="form-label">grade</label>
+          <input type="text" class="form-control" name="grade">
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <label for="" class="form-label">groundedArea</label>
+        <input type="text" class="form-control" name="groundedArea">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">physicalProperties</label>
+        <input type="text" class="form-control" name="physicalProperties">
+    </div>
+
+    <div class="col-md-6 mt-3">
+        <label for="" class="form-label">qualityAssurance</label>
+        <input type="file" class="form-control" name="qualityAssurance">
+    </div>
+
+    <button class="btn btn-warning mb-5">Add now</button>
+</form>
+
+</div>
+</div>
+
+{% endblock %}
+
+

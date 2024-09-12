@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+{% block content %}
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <img src="{{x.image.url}}" class="card-img-top" alt="...">
+    </div>
+
+    <div class="col-md-6">
+        <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Project name:{{x.projectName}}</h5>
+              <p class="card-text">Owner: {{x.owner}}</p>
+              <p class="card-text">Mineral: <small class="text-body-secondary">{{x.resources}}</small></p>
+              <p class="card-text">Resources Summary: <small class="text-body-secondary">{{x.resourcesSummary}}</small></p>
+              <p class="card-text">Area Covered: <small class="text-body-secondary">{{x.areaCovered}}</small></p>
+              <p class="card-text">Licence Type: <small class="text-body-secondary">{{x.licenceType}}</small></p>
+              <p class="card-text">Licence Number: <small class="text-body-secondary">{{x.licenceNumber}}</small></p>
+              <p class="card-text">Physical Location: <small class="text-body-secondary">{{x.physicalLocation}}</small></p>
+              <p class="card-text">Level of Investment: <small class="text-body-secondary">{{x.levelInvestment}}</small></p>
+              <p class="card-text">modeOfInvestment: <small class="text-body-secondary">{{x.modeOfInvestment}}</small></p>
+              <p class="card-text">projectStatus: <small class="text-body-secondary">{{x.projectStatus}}</small></p>
+              <p class="card-text">attachments: <small class="text-body-secondary">{{x.attachments}}</small></p>
+              <p class="card-text">Contacts: <small class="text-body-secondary">{{x.contact}}</small></p>
+              <p class="card-text"><a href="{{x.mapLocation}}"> Click to Location on Map </a></p>
+
+              <p>
+                <a href="{% url 'investmentEdit' x.id %}"><i class="bi bi-pen">Edit</i></a>
+                <a href="{% url 'investmentDelete' x.id %}"><i class="bi bi-trash3">Delete</i></a>
+              </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

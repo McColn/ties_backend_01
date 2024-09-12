@@ -1,0 +1,18 @@
+<!-- your_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Control</title>
+</head>
+<body>
+    <h1>ESP32 Control</h1>
+    <form method="post" action="{% url 'espstatus-list' %}">
+        {% csrf_token %}
+        <label for="status">Enter status (on/off):</label>
+        <input type="text" id="status" name="status" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

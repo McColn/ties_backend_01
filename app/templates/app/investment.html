@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+{% block content %}
+
+<div class="row mt-3">
+
+    {% for i in x %}
+      <div class="col-sm-4 mb-3">
+        <a href="{% url 'investmentDetail' i.id %}" style="text-decoration: none; color: inherit;">
+          <div class="card mb-3">
+              <img src="{{i.image.url}}" class="card-img-top" alt="{{i.projectName}}">
+              <div class="card-body">
+                <h5 class="card-title">{{i.projectName}}</h5>
+                <p class="card-text">{{i.operatingCompany}}</p>
+                <p class="card-text"><small class="text-body-secondary">{{i.resources}}</small></p>
+              </div>
+            </div>
+        </a>
+      </div>
+    {% endfor %}
+
+    <div class="col-sm-3 mb-3 mb-sm-0 mt-3">
+        <a href="{% url 'investmentAdd' %}" class="btn btn-warning" style="text-decoration: none; color: inherit;">Add Investment</a>
+    </div>
+
+</div>
+
+{% endblock %}

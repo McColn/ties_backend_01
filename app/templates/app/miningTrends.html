@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div class="container">
+    <h3 class="mb-3">Mining Trends Daily</h3>
+    <div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="table-success ">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Mine name</th>
+            <th scope="col">local_cost</th>
+            <th scope="col">international_cost</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in x %}
+          <tr>
+            <th scope="row">#</th>
+            <td>{{i.mine_name.name}}</td>
+            <td>{{i.local_cost}}</td>
+            <td>{{i.international_cost}}</td>
+            <td>{{i.period}}</td>
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+    </div>
+    
+    <a href="{% url 'miningTrendsAdd' %}">
+      <button class="btn btn-warning">
+        Add
+      </button>
+    </a>
+    
+</div>
+
+{% endblock %}
+
